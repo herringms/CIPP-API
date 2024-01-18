@@ -4,31 +4,47 @@
   "Fields": [
     {
       "name": "UserMFAMethods",
-      "UseExistingInfo": false,
-      "FrontendFields": [
-        {
-          "name": "User",
-          "value": "userPrincipalName"
-        },
-        {
-          "name": "MFA Method Type",
-          "value": "ExtractFields-0"
-        }
-      ],
-      "desc": "List of all registered MFA methods for a user",
-      "StoreAs": "JSON",
       "API": "Graph",
+      "URL": "https://graph.microsoft.com/v1.0/users/{{UserID}}/authentication/methods",
+      "Parameters": {
+        "asApp": "True"
+      },
       "ExtractFields": [
+        "id",
         "methodType",
         "phoneNumber",
         "email",
         "deviceTag"
       ],
-      "parameters": {
-        "Content-Type": "application/json",
-        "asApp": true
-      },
-      "URL": "https://graph.microsoft.com/v1.0/users/"
+      "StoreAs": "JSON",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "User",
+          "value": "UserMFAMethods.userPrincipalName",
+          "formatter": "string"
+        },
+        {
+          "name": "MFA Method Type",
+          "value": "UserMFAMethods.methodType",
+          "formatter": "string"
+        },
+        {
+          "name": "Phone Number",
+          "value": "UserMFAMethods.phoneNumber",
+          "formatter": "string"
+        },
+        {
+          "name": "Email",
+          "value": "UserMFAMethods.email",
+          "formatter": "string"
+        },
+        {
+          "name": "Device Tag",
+          "value": "UserMFAMethods.deviceTag",
+          "formatter": "string"
+        }
+      ]
     }
   ]
 }
