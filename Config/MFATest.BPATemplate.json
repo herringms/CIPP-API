@@ -5,7 +5,7 @@
     {
       "name": "UserMFAMethods",
       "API": "Graph",
-      "URL": "https://graph.microsoft.com/v1.0/users/{{UserID}}/authentication/methods",
+      "URL": "https://graph.microsoft.com/v1.0/users/",
       "Parameters": {
         "asApp": "True"
       },
