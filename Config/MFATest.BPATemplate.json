@@ -1,0 +1,34 @@
+{
+  "name": "MFA Test",
+  "style": "Tenant",
+  "Fields": [
+    {
+      "name": "UserMFAMethods",
+      "UseExistingInfo": false,
+      "FrontendFields": [
+        {
+          "name": "User",
+          "value": "userPrincipalName"
+        },
+        {
+          "name": "MFA Method Type",
+          "value": "ExtractFields-0"
+        }
+      ],
+      "desc": "List of all registered MFA methods for a user",
+      "StoreAs": "JSON",
+      "API": "Graph",
+      "ExtractFields": [
+        "methodType",
+        "phoneNumber",
+        "email",
+        "deviceTag"
+      ],
+      "parameters": {
+        "Content-Type": "application/json",
+        "asApp": true
+      },
+      "URL": "https://graph.microsoft.com/v1.0/users/"
+    }
+  ]
+}
