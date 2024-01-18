@@ -20,29 +20,34 @@
       "UseExistingInfo": false,
       "FrontendFields": [
         {
-          "name": "User",
-          "value": "UserMFAMethods.userPrincipalName",
+          "name": "Display Name",
+          "value": "User.displayName",
           "formatter": "string"
         },
         {
-          "name": "MFA Method Type",
-          "value": "UserMFAMethods.methodType",
+          "name": "Email Address",
+          "value": "User.mail",
           "formatter": "string"
         },
         {
-          "name": "Phone Number",
-          "value": "UserMFAMethods.phoneNumber",
-          "formatter": "string"
+          "name": "MFA Enabled",
+          "value": "User.mfaEnabled",
+          "formatter": "bool"
+        },
+        {
+          "name": "SMS",
+          "value": "User.mfaMethods.sms",
+          "formatter": "bool"
         },
         {
           "name": "Email",
-          "value": "UserMFAMethods.email",
-          "formatter": "string"
+          "value": "User.mfaMethods.email",
+          "formatter": "bool"
         },
         {
-          "name": "Device Tag",
-          "value": "UserMFAMethods.deviceTag",
-          "formatter": "string"
+          "name": "Device Key",
+          "value": "User.mfaMethods.deviceKey",
+          "formatter": "bool"
         }
       ]
     }
