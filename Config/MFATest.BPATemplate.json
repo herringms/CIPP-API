@@ -1,6 +1,6 @@
 {
   "name": "MFA Test",
-  "style": "Table",
+  "style": "Tenant",
   "Fields": [
     {
       "name": "UserMFAMethods",
